@@ -9,9 +9,9 @@ function ReviewContainer({reviews}) {
     
 
     return(
-        <div>
+        <ul>
             {renderReviews}
-        </div>
+        </ul>
     )
 }
 

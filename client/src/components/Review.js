@@ -4,7 +4,7 @@ function Review({review}) {
     console.log(review)
 
     return(
-        <p>{review}</p>
+        <li>{review}</li>
     )
 }
 
