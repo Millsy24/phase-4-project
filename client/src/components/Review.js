@@ -1,10 +1,11 @@
 import React from "react";
 
-function Review({review}) {
-    console.log(review)
+function Review({review, rating}) {
 
     return(
-        <li>{review}</li>
+        
+        <li><strong>{rating}</strong> {review}</li>
+        
     )
 }
 

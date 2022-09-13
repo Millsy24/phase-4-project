@@ -12,7 +12,7 @@ function ListingCard ({listing}) {
             <img alt="" src={listing.image}></img>
             <h3>{listing.rating}</h3>
             <div>
-                <ReviewContainer reviews={listing.reviews} />
+                <ReviewContainer id={listing.id} reviews={listing.reviews} />
             </div>
         </div>
 
