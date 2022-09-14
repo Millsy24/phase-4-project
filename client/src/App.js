@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Renter from './components/Renter'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SignupForm from './components/SignupForm'
 
 
 function App() {
@@ -22,7 +23,7 @@ useEffect(() => {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Login} />
+          <Route path='/' exact component={SignupForm} />
           <Route path='/AllListings' component={ListingContainer} />
           <Route path='/Renter' component={Renter} />
         </Switch>

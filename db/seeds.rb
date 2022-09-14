@@ -16,7 +16,7 @@ end
 
 30.times do 
     User.create(
-        name: Faker::Name.unique.name , dob: Faker::Date.birthday(min_age: 18, max_age: 65) , email: Faker::Internet.email , password: nil, phone: Faker::PhoneNumber.cell_phone
+        name: Faker::Name.unique.name , dob: Faker::Date.birthday(min_age: 18, max_age: 65) , email: Faker::Internet.email , password_digest: "password", phone: Faker::PhoneNumber.cell_phone
     )
 end
         
