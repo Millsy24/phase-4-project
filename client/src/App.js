@@ -1,6 +1,10 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import ListingContainer from './components/ListingContainer'
+import Login from './components/Login'
+import Renter from './components/Renter'
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 function App() {
@@ -14,7 +18,16 @@ useEffect(() => {
 
 
   return (
-   <ListingContainer listings = {listings}/>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Login} />
+          <Route path='/AllListings' component={ListingContainer} />
+          <Route path='/Renter' component={Renter} />
+        </Switch>
+      </Router>
+    </div>
   )
 }
 
