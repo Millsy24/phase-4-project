@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import ListingCard from './ListingCard'
 
-function ListingContainer() {
+function ListingContainer({listings}) {
 
-    const [listings, setListings] = useState([])
-    useEffect(() => {
-     fetch("/listings")
-    .then(r => r.json())
-    .then(data => setListings(data))
-    }, [])
-
-    const renderListings = listings.map(listing=>
+    const renderListings = listings.map(listing=> 
         <ListingCard key = {listing.id} listing = {listing}/>)
+
     return(
         <div>
         {renderListings}
