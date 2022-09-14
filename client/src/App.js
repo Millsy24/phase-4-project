@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignupForm from './components/SignupForm'
 
 
+
 function App() {
 const [listings, setListings] = useState([])
 useEffect(() => {
@@ -16,6 +17,21 @@ useEffect(() => {
   .then(data => setListings(data))
 
 }, [])
+
+const [currentUser, setCurrentUser] = useState('')
+
+useEffect(()=> {
+fetch(`/auth`)
+.then(res => {
+  if (res.ok){
+    res.json().then(user => setCurrentUser(user))
+  }
+})
+}, [])
+
+if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+
+
 
 
   return (
@@ -26,6 +42,7 @@ useEffect(() => {
           <Route path='/' exact component={SignupForm} />
           <Route path='/AllListings' component={ListingContainer} />
           <Route path='/Renter' component={Renter} />
+          <Route path='/Login' component ={Login} />
         </Switch>
       </Router>
     </div>

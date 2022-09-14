@@ -14,6 +14,9 @@ function Navbar() {
             <p className="Link" >
                 <Link to="/Renter">Become a Renter</Link>
             </p>
+            <p className ="Link">
+                <Link to="/Login">Login</Link>
+            </p>
         </div>
     );
 
