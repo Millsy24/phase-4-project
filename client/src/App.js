@@ -4,6 +4,7 @@ import ListingContainer from './components/ListingContainer'
 import Login from './components/Login'
 import Renter from './components/Renter'
 import Navbar from './components/Navbar'
+import SignupForm from './components/SignupForm'
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -25,7 +26,7 @@ useEffect(() => {
         <Navbar />
 
         <Routes>
-          <Route path='/' exact element={<Login />} />
+          <Route path='/' exact element={<SignupForm />} />
           <Route path='/AllListings' element={<ListingContainer listings={listings}/>} />
           <Route path='/Renter' element={<Renter />} />
         </Routes>
