@@ -29,7 +29,7 @@ fetch(`/auth`)
 })
 }, [])
 
-if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+ if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
 
 
 
