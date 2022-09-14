@@ -4,7 +4,7 @@ function Renter() {
 
     return(
         <div>
-            
+            Become a Renter
         </div>
     )
 }

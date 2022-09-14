@@ -4,8 +4,10 @@ import ListingContainer from './components/ListingContainer'
 import Login from './components/Login'
 import Renter from './components/Renter'
 import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignupForm from './components/SignupForm'
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 
 
@@ -38,11 +40,13 @@ fetch(`/auth`)
     <div className="App">
       <Router>
         <Navbar />
+
+
+
         <Switch>
-          <Route path='/' exact component={SignupForm} />
-          <Route path='/AllListings' component={ListingContainer} />
-          <Route path='/Renter' component={Renter} />
-          <Route path='/Login' component ={Login} />
+          <Route path='/' exact element={<SignupForm />} />
+          <Route path='/AllListings' element={<ListingContainer listings={listings}/>} />
+          <Route path='/Renter' element={<Renter />} />
         </Switch>
       </Router>
     </div>
