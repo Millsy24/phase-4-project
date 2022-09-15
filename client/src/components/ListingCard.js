@@ -13,7 +13,7 @@ function ListingCard ({listing, getData}) {
     
 
     return(
-        <div>
+        <div className ="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <h2>{listing.city}, {listing.state}</h2>
             <img alt="" src={listing.image}></img>
             <h3>{listing.rating}</h3>

@@ -8,7 +8,7 @@ function ListingContainer({listings, getData}) {
         <ListingCard key = {listing.id} listing = {listing} getData ={getData}/>)
 
     return(
-        <div>
+        <div className = "px-2 flex -mx-2 w-1/3 px-2">
         {renderListings}
         </div>
 
