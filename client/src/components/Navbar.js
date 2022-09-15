@@ -16,7 +16,7 @@ function Navbar({setCurrentUser}) {
     return (
         <div className="navbar">
             <p className="Link" >
-                <Link to="/">Signup</Link>
+                <Link to="/signup">Signup</Link>
             </p>
             <p className="Link" >
                 <Link to="/listings">View Listings</Link>

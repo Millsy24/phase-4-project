@@ -5,8 +5,10 @@ import Login from './components/Login'
 import Renter from './components/Renter'
 import Navbar from './components/Navbar'
 import SignupForm from './components/SignupForm'
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ReviewContainer from './components/ReviewContainer'
+import Review from './components/Review'
+import SplashPage from './components/SplashPage'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 
 
@@ -31,7 +33,14 @@ fetch(`/auth`)
 })
 }, [])
 
- if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+  if (!currentUser) return <SplashPage setCurrentUser={setCurrentUser} />
+
+ const getData = () => {
+  fetch('/listings')
+  .then(res => res.json())
+  .then(data => setListings(data))
+ }
+
  
 
 
@@ -39,15 +48,16 @@ fetch(`/auth`)
 
   return (
     <div className="App">
-      <Router>
+      
         <Navbar setCurrentUser = {setCurrentUser}/>
         <Routes>
-          <Route path='/' exact element={<SignupForm />} />
-          <Route path='/listings' element={<ListingContainer listings={listings}/>} />
+          <Route path='/' exact element={<SplashPage />} />
+          <Route path='/listings' element={<ListingContainer listings={listings} getData = {getData}/>} />
           <Route path='/renter' element={<Renter />} />
-          <Route path ='login' element ={<Login/>} />
+          <Route path ='login' element ={<Login setCurrentUser ={setCurrentUser}/>} />
+          <Route path = '/signup' element = {<SignupForm/>}/> 
         </Routes>
-      </Router>
+      
     </div>
   )
 }

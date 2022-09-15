@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import Review from "./Review";
 
-function ReviewContainer({reviews, id}) {
+function ReviewContainer({reviews, id, getData}) {
 
     const renderReviews = reviews.map(review => {
-            return (<Review key={review.id} review={review.content} rating={review.rating} />)
+            return (<Review key={review.id} review={review} getData ={getData}/>)
         })
 
     function handleSubmit(e) {
@@ -24,6 +24,8 @@ function ReviewContainer({reviews, id}) {
             },
             body: JSON.stringify(data)
         })
+        .then((resp) => resp.json())
+        .then(newReview => getData(newReview))
         e.target.reset()
     }
 

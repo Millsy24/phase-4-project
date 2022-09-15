@@ -1,9 +1,15 @@
 import React from 'react'
 import ReviewContainer from './ReviewContainer'
+import {useState} from 'react'
 
 
 
-function ListingCard ({listing}) {
+function ListingCard ({listing, getData}) {
+    const [getReviews, setGetReviews] = useState(false)
+
+    const toggleReviews = () => {
+        (setGetReviews(getReviews=> !getReviews))
+    }
     
 
     return(
@@ -12,8 +18,9 @@ function ListingCard ({listing}) {
             <img alt="" src={listing.image}></img>
             <h3>{listing.rating}</h3>
             <div>
-                <ReviewContainer id={listing.id} reviews={listing.reviews} />
+              { getReviews ? <ReviewContainer id={listing.id} reviews={listing.reviews} getData = {getData} /> : null }
             </div>
+            <button onClick = {toggleReviews}>Reviews</button>
         </div>
 
     )
