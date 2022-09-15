@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, useNavigate, Link} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 
 function SplashPage () {
@@ -8,12 +8,12 @@ function SplashPage () {
     const navigate = useNavigate()
 
     const navigateToSignUp = () => {
-        navigate('/login')
+        navigate('/signup')
 
     }
 
     const navigateToLogin = () => {
-        navigate('/signup')
+        navigate('/login')
     }
 
     

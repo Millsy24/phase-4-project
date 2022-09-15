@@ -1,14 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar({setCurrentUser}) {
+
+    const navigate = useNavigate()
     
     const handleLogout = () => {
         fetch('/logout', {
             method: 'DELETE'
         })
         setCurrentUser(null)
-        window.location.reload(true)
+        navigate('/')
+        
     }
 
 

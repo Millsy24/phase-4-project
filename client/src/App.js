@@ -33,7 +33,7 @@ fetch(`/auth`)
 })
 }, [])
 
-  if (!currentUser) return <SplashPage setCurrentUser={setCurrentUser} />
+  // if (!currentUser) return <SplashPage setCurrentUser={setCurrentUser} />
 
  const getData = () => {
   fetch('/listings')
@@ -48,14 +48,14 @@ fetch(`/auth`)
 
   return (
     <div className="App">
-      
+      <h1 className="text-3xl font-bold ">Hello World</h1>
         <Navbar setCurrentUser = {setCurrentUser}/>
         <Routes>
-          <Route path='/' exact element={<SplashPage />} />
+          <Route index exact element={<SplashPage />} />
           <Route path='/listings' element={<ListingContainer listings={listings} getData = {getData}/>} />
           <Route path='/renter' element={<Renter />} />
-          <Route path ='login' element ={<Login setCurrentUser ={setCurrentUser}/>} />
-          <Route path = '/signup' element = {<SignupForm/>}/> 
+          <Route path ='/login' element ={<Login setCurrentUser ={setCurrentUser}/>} />
+          <Route path = '/signup' element = {<SignupForm setCurrentUser = {setCurrentUser}/>}/> 
         </Routes>
       
     </div>

@@ -1,7 +1,10 @@
 import React from "react";
-import {useHistory, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useState} from "react"
+import ListingContainer from "./ListingContainer";
 function Login({setCurrentUser}) {
+
+  const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -25,14 +28,20 @@ function Login({setCurrentUser}) {
           if (res.ok) {
             res.json().then((user) => {
               setCurrentUser(user);
+              navigate('/listings')
             });
+            
           } else {
             res.json().then((errors) => {
               console.error(errors);
             });
           }
         });
+        
+
       };
+
+      
     
       return (
         <form onSubmit={handleSubmit}>

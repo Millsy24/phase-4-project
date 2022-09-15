@@ -1,19 +1,22 @@
 import React, {useState} from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
-function SignupForm () {
+function SignupForm ({setCurrentUser}) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [dob, setDob] = useState('')
     const [phone, setPhone] = useState('')
 
+    const navigate = useNavigate()
+
     
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        const user = {
+        const userData = {
             name,
             email,
             password,
@@ -23,10 +26,22 @@ function SignupForm () {
         fetch('/users',{
             method: 'POST',
             headers:{'Content-Type': 'application/json'},
-            body:JSON.stringify(user)
+            body:JSON.stringify(userData)
+        }).then((res) => {
+            if (res.ok) {
+                res.json().then((user) => {
+                    setCurrentUser(user)
+                    navigate('/listings')
+                })
+            }
+            else {
+                res.json().then((errors)=>{
+                    console.log(errors)
+                })
+            }
         })
     
-    }
+        }
 
 
 
