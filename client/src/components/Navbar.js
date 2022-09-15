@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({setCurrentUser}) {
+    
+    const handleLogout = () => {
+        fetch('/logout', {
+            method: 'DELETE'
+        })
+        setCurrentUser(null)
+        window.location.reload(true)
+    }
+
+
 
     return (
         <div className="navbar">
@@ -9,14 +19,15 @@ function Navbar() {
                 <Link to="/">Signup</Link>
             </p>
             <p className="Link" >
-                <Link to="/AllListings">View Listings</Link>
+                <Link to="/listings">View Listings</Link>
             </p>
             <p className="Link" >
-                <Link to="/Renter">Become a Renter</Link>
+                <Link to="/renter">Become a Renter</Link>
             </p>
             <p className ="Link">
-                <Link to="/Login">Login</Link>
+                <Link to="/login">Login</Link>
             </p>
+            <button onClick = {handleLogout}>Logout</button>
         </div>
     );
 

@@ -32,18 +32,20 @@ fetch(`/auth`)
 }, [])
 
  if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+ 
 
 
-
+ 
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar setCurrentUser = {setCurrentUser}/>
         <Routes>
           <Route path='/' exact element={<SignupForm />} />
-          <Route path='/AllListings' element={<ListingContainer listings={listings}/>} />
-          <Route path='/Renter' element={<Renter />} />
+          <Route path='/listings' element={<ListingContainer listings={listings}/>} />
+          <Route path='/renter' element={<Renter />} />
+          <Route path ='login' element ={<Login/>} />
         </Routes>
       </Router>
     </div>
