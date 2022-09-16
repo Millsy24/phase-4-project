@@ -12,7 +12,7 @@ function ReviewContainer({reviews, id, getData}) {
 
         const data = {
             "listing_id": id,
-            "user_id": 2,
+            "user_id": 4,
             "rating": ratingValue,
             "content": ratingContent
         }

@@ -1,7 +1,18 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {useState, useEffect} from "react"
 
-function Navbar({setCurrentUser}) {
+function Navbar() {
+    const [currentUser, setCurrentUser] = useState('')
+
+useEffect(()=> {
+fetch(`/auth`)
+.then(res => {
+  if (res.ok){
+    res.json().then(user => setCurrentUser(user))
+  }
+})
+}, [])
 
     const navigate = useNavigate()
     

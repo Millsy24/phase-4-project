@@ -1,5 +1,6 @@
 import React from 'react'
 import ListingCard from './ListingCard'
+import Navbar from './Navbar'
 
 function ListingContainer({listings, getData}) {
     
@@ -8,10 +9,12 @@ function ListingContainer({listings, getData}) {
         <ListingCard key = {listing.id} listing = {listing} getData ={getData}/>)
 
     return(
+        <>
+        <Navbar/>
         <div class="grid gap-8 space-x-1 lg:grid-cols-6" >
             {renderListings}
         </div>
-
+    </>
     )
 }
 

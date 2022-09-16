@@ -48,7 +48,7 @@ fetch(`/auth`)
 
   return (
     <div className="App">
-        <Navbar setCurrentUser = {setCurrentUser}/>
+        
         <Routes>
           <Route index exact element={<SplashPage />} />
           <Route path='/listings' element={<ListingContainer listings={listings} getData = {getData}/>} />

@@ -9,6 +9,8 @@ function ListingCard ({listing, getData}) {
 
     const toggleReviews = () => {
         (setGetReviews(getReviews=> !getReviews))
+
+        console.log(listing)
     }
     
 
@@ -21,7 +23,8 @@ function ListingCard ({listing, getData}) {
             <a href='#'>
                 <img class="rounded-t-lg" alt="" src={listing.image}></img>
             </a>
-            <h3  >{listing.rating}</h3>
+            <h3>{listing.reviews.rating}</h3>
+            {/* <h3>Price:${listing.price}/Night</h3> */}
             <div>
               { getReviews ? <ReviewContainer id={listing.id} reviews={listing.reviews} getData = {getData} /> : null }
             </div>

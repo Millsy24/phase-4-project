@@ -51,8 +51,7 @@ function Review({review, getData}) {
             method: 'DELETE'
             
         })
-        .then((resp) => resp.json())
-        .then(newReview => getData(newReview))
+        .then(() => getData())
         
     }
 
@@ -74,7 +73,7 @@ function Review({review, getData}) {
     return(
         <>
         
-        <li><strong>{review.rating}</strong> {review.content}</li>
+        <li><strong>Rating:{review.rating}/5</strong> {review.content}</li>
         {editForm ? <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick = {toggleEditForm} >Cancel Edit Review</button> : <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick = {toggleEditForm}>✏</button>}
         {/* <br></br> */}
         {/* <br></br> */}
