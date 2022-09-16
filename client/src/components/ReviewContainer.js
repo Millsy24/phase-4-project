@@ -38,6 +38,7 @@ function ReviewContainer({reviews, id, getData}) {
             <ul>
                 {renderReviews}
             </ul>
+            <br></br>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input max='5' min='1' class="border-solid border-4" onChange={(e) => setRatingValue(e.target.value)} type="number" placeholder="Rating" ></input>
                 <input class="border-solid border-4" onChange={(e) => setRatingContent(e.target.value)} placeholder="Content" ></input>
