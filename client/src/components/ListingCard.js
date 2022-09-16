@@ -23,12 +23,13 @@ function ListingCard ({listing, getData}) {
             <a href='#'>
                 <img class="rounded-t-lg" alt="" src={listing.image}></img>
             </a>
+            <button class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" onClick = {toggleReviews}>Reviews</button>
             <h3>{listing.reviews.rating}</h3>
             {/* <h3>Price:${listing.price}/Night</h3> */}
             <div>
               { getReviews ? <ReviewContainer id={listing.id} reviews={listing.reviews} getData = {getData} /> : null }
             </div>
-            <button class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" onClick = {toggleReviews}>Reviews</button>
+            {/* <button class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" onClick = {toggleReviews}>Reviews</button> */}
         </div>
 
     )

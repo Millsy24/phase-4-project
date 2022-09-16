@@ -10,7 +10,8 @@ function ListingContainer({listings, getData}) {
 
     return(
         <>
-        <Navbar/>
+        <Navbar  />
+        <br></br>
         <div class="grid gap-8 space-x-1 lg:grid-cols-6" >
             {renderListings}
         </div>

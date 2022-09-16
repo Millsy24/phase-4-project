@@ -47,8 +47,21 @@ function SignupForm ({setCurrentUser}) {
 
         
     return (
-        <div>
-        <form onSubmit = {handleSubmit}>
+        <div  >
+        <form class="
+        relative
+        w-full
+        flex flex-wrap
+        items-center
+        justify-evenly
+        py-4
+        bg-gray-300
+        text-gray-700
+        hover:text-gray-700
+        focus:text-gray-8700
+        shadow-lg
+        navbar navbar-expand-lg navbar-light
+        " onSubmit = {handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input type= "text" name = "username" value = {name} onChange={(e)=>setName(e.target.value)}></input>
             <label htmlFor="email">Email:</label>

@@ -47,7 +47,7 @@ fetch(`/auth`)
  
 
   return (
-    <div className="App">
+    <div  className="App">
         
         <Routes>
           <Route index exact element={<SplashPage />} />

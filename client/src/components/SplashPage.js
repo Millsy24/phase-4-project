@@ -24,11 +24,15 @@ function SplashPage () {
 
 return(
 
-    <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="h-screen flex flex-col items-center 
+    justify-center border  rounded" >
         
             
-            <button onClick ={navigateToSignUp} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Sign up</button>
-            <button onClick = {navigateToLogin}class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Login</button>
+            <button  onClick ={navigateToSignUp} class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150  ease-in-out">Sign up</button>
+            <br></br>
+            <p>or</p>
+            <br></br>
+            <button onClick = {navigateToLogin} class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150  ease-in-out" >Log in</button>
         
         
     </div>

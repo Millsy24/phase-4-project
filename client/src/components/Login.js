@@ -44,24 +44,45 @@ function Login({setCurrentUser}) {
       
     
       return (
-        <form onSubmit={handleSubmit}>
+        <form class="
+        relative
+        w-full
+        flex flex-wrap
+        items-center
+        justify-evenly
+        py-4
+        bg-gray-300
+        text-gray-700
+        hover:text-gray-700
+        focus:text-gray-8700
+        shadow-lg
+        navbar navbar-expand-lg navbar-light
+        " onSubmit={handleSubmit}>
           <label htmlFor="username">Username:</label>
           <input
+            // class="border-black border-2"
             id="email-input"
             type="text"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
+          <br></br>
+          <p></p>
           <label htmlFor="password">Password:</label>
           <input
+            // class="border-black border-2"
             id="password-input"
             type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <br></br>
+          <p></p>
+          <button 
+          // class="border-black border-2" 
+          type="submit">Submit</button>
         </form>
       );
     };
