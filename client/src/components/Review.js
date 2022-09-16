@@ -59,9 +59,13 @@ function Review({review, getData}) {
 
     const editFormInputs =
     <form onSubmit = {handleEditForm}>
-        { <input placeholder = "Rating" onChange = {handleChangeRating}></input> }
-        <textarea placeholer = "Your review" onChange = {handleChangeContent}></textarea>
-        <button>Edit</button>
+        <label>Rating: </label>
+        <input class="border-solid border-4"  onChange = {handleChangeRating}></input> 
+        <br></br>
+        <label>Text: </label>
+        <input class="border-solid border-4"  onChange = {handleChangeContent}></input>
+        <br></br>
+        <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Edit</button>
         
     </form>
 
@@ -71,9 +75,11 @@ function Review({review, getData}) {
         <>
         
         <li><strong>{review.rating}</strong> {review.content}</li>
-        {editForm ? <button onClick = {toggleEditForm} >Cancel Edit Review</button> : <button onClick = {toggleEditForm}>EditReview</button>}
+        {editForm ? <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick = {toggleEditForm} >Cancel Edit Review</button> : <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick = {toggleEditForm}>✏</button>}
+        {/* <br></br> */}
+        {/* <br></br> */}
         {editForm ? editFormInputs: null}
-        <button onClick={handleDelete}>Delete Review</button>
+        <button class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleDelete}>🗑</button>
         </>
     )
 }

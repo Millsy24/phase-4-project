@@ -8,8 +8,8 @@ function ListingContainer({listings, getData}) {
         <ListingCard key = {listing.id} listing = {listing} getData ={getData}/>)
 
     return(
-        <div className = "px-2 flex -mx-2 w-1/3 px-2">
-        {renderListings}
+        <div class="grid gap-8 space-x-1 lg:grid-cols-6" >
+            {renderListings}
         </div>
 
     )
